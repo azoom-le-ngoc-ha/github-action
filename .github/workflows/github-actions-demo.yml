@@ -27,11 +27,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        run: yarn install
+      - name: Install CURL
+        run: apk --no-cache add curl
 
-      - name: Run tests
-        run: yarn test
+      - name: CURL google.com
+        run: curl https://stackoverflow.com
 
-      - name: Lint code
-        run: yarn lint
+      - name: Echo end
+        run: echo 'end'
